@@ -305,7 +305,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551609847}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 638351910}
   - component: {fileID: 638351911}
   m_Layer: 0
-  m_Name: Spawn Manager
+  m_Name: Tile Spawn Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +361,9 @@ MonoBehaviour:
   minStraightTiles: 3
   maxStraightTiles: 15
   originTile: {fileID: 1521128123}
-  turnTiles: []
+  turnTiles:
+  - {fileID: 6988651494835820888, guid: fc8384456b1aa5946b4e2a3078604e08, type: 3}
+  - {fileID: 921803303271294197, guid: 0e708a5e7426b5945b39cd292eb014f6, type: 3}
   obstacles: []
 --- !u!1 &653260035
 GameObject:
@@ -554,8 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b13b47a40b5884d8d005038a596ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enablePlanet: 0
-  bendingAmount: 0.005
+  enablePlanet: 1
+  bendingAmount: 0.0018
 --- !u!1 &1237415840
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +822,10 @@ PrefabInstance:
     - target: {fileID: 4231079400925765167, guid: 564436dd576df1a41af75b81ac9c8234, type: 3}
       propertyPath: m_Name
       value: StraightSection_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231079400925765167, guid: 564436dd576df1a41af75b81ac9c8234, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 564436dd576df1a41af75b81ac9c8234, type: 3}

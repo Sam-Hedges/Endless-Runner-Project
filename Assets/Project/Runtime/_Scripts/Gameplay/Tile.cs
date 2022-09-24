@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace Project.Runtime._Scripts.Gameplay
 {
+    [Flags]
     public enum TileType
     {
         STRAIGHT,
@@ -14,7 +16,8 @@ namespace Project.Runtime._Scripts.Gameplay
     public class Tile : MonoBehaviour
     {
         public TileType type;
-        public Transform pivot;
+        public Transform startPivot;
+        public Transform endPivot;
         public MeshRenderer roadRenderer;
     }
 }

@@ -36,21 +36,59 @@ namespace Project.Runtime._Scripts.Gameplay
                 SpawnTile(originTile.GetComponent<Tile>());
             }
             
-            SpawnTile(ReturnRandGameObjectFromList(turnTiles).GetComponent<Tile>());
+            //SpawnTile(ReturnRandGameObjectFromList(turnTiles).GetComponent<Tile>());
+            SpawnTile(turnTiles[0].GetComponent<Tile>());
+            AddNewDirection(Vector3.left);
         }
 
         private void SpawnTile(Tile tile, bool spawnObstacle = false) {
+
+            Quaternion newTileRotation = tile.gameObject.transform.rotation *
+                                         Quaternion.LookRotation(currentTileDirection, Vector3.up);
+            
             // Instantiate a new tile
-            previousTile = GameObject.Instantiate(tile.gameObject, currentTilePosition, Quaternion.identity);
+            previousTile = GameObject.Instantiate(tile.gameObject, currentTilePosition + tile.transform.localPosition, newTileRotation);
             
             // Store this tile as an active tile in the scene
             currentTiles.Add(previousTile);
             
             // Position this tile in the scene correctly
-            Vector3 tileSize = previousTile.GetComponent<Tile>().roadRenderer.bounds.size;
-            currentTilePosition += Vector3.Scale(tileSize, currentTileDirection);
+            if (tile.type == TileType.STRAIGHT) {
+                Vector3 tileSize = previousTile.GetComponent<Tile>().roadRenderer.bounds.size;
+                currentTilePosition += Vector3.Scale(tileSize, currentTileDirection);
+            }
         }
 
+        public void AddNewDirection(Vector3 direction) {
+            currentTileDirection = direction;
+
+            Vector3 tilePlacementScale = Vector3.zero;
+            switch (previousTile.GetComponent<Tile>().type) {
+                case TileType.LEFT:
+                case TileType.RIGHT:
+                    tilePlacementScale = Vector3.Scale((previousTile.GetComponent<Tile>().roadRenderer.bounds.size - (Vector3.one * 2)) + 
+                                                       (Vector3.one * originTile.GetComponentInChildren<BoxCollider>().size.z / 2), currentTileDirection);
+                    break;
+                case TileType.QUAD:
+                    break;
+                case TileType.BI:
+                    tilePlacementScale = Vector3.Scale(previousTile.GetComponent<Tile>().roadRenderer.bounds.size / 2 +
+                                                       (Vector3.one * originTile.GetComponentInChildren<BoxCollider>()
+                                                           .size.z / 2), currentTileDirection);
+                    break;
+            }
+            
+            currentTilePosition += tilePlacementScale;
+
+            int currentPathLength = Random.Range(minStraightTiles, maxStraightTiles);
+            for (int i = 0; i < currentPathLength; i++) {
+                        
+                SpawnTile(originTile.GetComponent<Tile>(), (i != 0));
+            }
+                    
+            SpawnTile(ReturnRandGameObjectFromList(turnTiles).GetComponent<Tile>());
+        }
+        
         private GameObject ReturnRandGameObjectFromList(List<GameObject> list) {
             if (list.Count <= 0) return null;
 
