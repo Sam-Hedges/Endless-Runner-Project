@@ -12,7 +12,9 @@ namespace Project.Runtime._Scripts.Gameplay
         [SerializeField] private int minStraightTiles = 3;
         [SerializeField] private int maxStraightTiles = 15;
         
-        [SerializeField] private GameObject originTile;
+        [SerializeField] private GameObject startTile;
+        
+        [SerializeField] private GameObject straightTile;
         [SerializeField] private List<GameObject> turnTiles;
         [SerializeField] private List<GameObject> obstacles;
         
@@ -31,9 +33,12 @@ namespace Project.Runtime._Scripts.Gameplay
             // Set the random seed to that of the current date & time in milliseconds
             Random.InitState(System.DateTime.Now.Millisecond);
 
+            previousTile = startTile;
+            currentTiles.Add(previousTile);
+            
             // Spawn in the starting tiles
             for (int i = 0; i < tileStartCount; i++) {
-                SpawnTile(originTile.GetComponent<Tile>());
+                SpawnTile(straightTile.GetComponent<Tile>());
             }
             
             //SpawnTile(ReturnRandGameObjectFromList(turnTiles).GetComponent<Tile>());
@@ -42,21 +47,20 @@ namespace Project.Runtime._Scripts.Gameplay
         }
 
         private void SpawnTile(Tile tile, bool spawnObstacle = false) {
-
+            
+            // Rotate this tile in the scene correctly
             Quaternion newTileRotation = tile.gameObject.transform.rotation *
                                          Quaternion.LookRotation(currentTileDirection, Vector3.up);
+
+            // Position this tile in the scene correctly
+            Vector3 pivotPosition = previousTile.GetComponent<Tile>().endPivot.position - tile.startPivot.localPosition + tile.transform.position;
+            Vector3 newTilePosition = Vector3.Scale(pivotPosition, currentTileDirection);
             
             // Instantiate a new tile
-            previousTile = GameObject.Instantiate(tile.gameObject, currentTilePosition + tile.transform.localPosition, newTileRotation);
+            previousTile = GameObject.Instantiate(tile.gameObject, newTilePosition, newTileRotation);
             
             // Store this tile as an active tile in the scene
             currentTiles.Add(previousTile);
-            
-            // Position this tile in the scene correctly
-            if (tile.type == TileType.STRAIGHT) {
-                Vector3 tileSize = previousTile.GetComponent<Tile>().roadRenderer.bounds.size;
-                currentTilePosition += Vector3.Scale(tileSize, currentTileDirection);
-            }
         }
 
         public void AddNewDirection(Vector3 direction) {
@@ -67,13 +71,13 @@ namespace Project.Runtime._Scripts.Gameplay
                 case TileType.LEFT:
                 case TileType.RIGHT:
                     tilePlacementScale = Vector3.Scale((previousTile.GetComponent<Tile>().roadRenderer.bounds.size - (Vector3.one * 2)) + 
-                                                       (Vector3.one * originTile.GetComponentInChildren<BoxCollider>().size.z / 2), currentTileDirection);
+                                                       (Vector3.one * straightTile.GetComponentInChildren<BoxCollider>().size.z / 2), currentTileDirection);
                     break;
                 case TileType.QUAD:
                     break;
                 case TileType.BI:
                     tilePlacementScale = Vector3.Scale(previousTile.GetComponent<Tile>().roadRenderer.bounds.size / 2 +
-                                                       (Vector3.one * originTile.GetComponentInChildren<BoxCollider>()
+                                                       (Vector3.one * straightTile.GetComponentInChildren<BoxCollider>()
                                                            .size.z / 2), currentTileDirection);
                     break;
             }
@@ -83,10 +87,14 @@ namespace Project.Runtime._Scripts.Gameplay
             int currentPathLength = Random.Range(minStraightTiles, maxStraightTiles);
             for (int i = 0; i < currentPathLength; i++) {
                         
-                SpawnTile(originTile.GetComponent<Tile>(), (i != 0));
+                SpawnTile(straightTile.GetComponent<Tile>(), (i != 0));
             }
                     
             SpawnTile(ReturnRandGameObjectFromList(turnTiles).GetComponent<Tile>());
+        }
+        
+        private Vector3 RotatePointAroundPivot(Vector3 childPosition, Vector3 parentPosition, Vector3 rotation) {
+            return Quaternion.Euler(rotation) * (childPosition - parentPosition) + parentPosition;
         }
         
         private GameObject ReturnRandGameObjectFromList(List<GameObject> list) {
