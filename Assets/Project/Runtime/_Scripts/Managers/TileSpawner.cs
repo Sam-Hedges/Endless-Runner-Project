@@ -47,17 +47,24 @@ namespace Project.Runtime._Scripts.Gameplay
         }
 
         private void SpawnTile(Tile tile, bool spawnObstacle = false) {
-            
+
+            Vector3 previousEndPivotPosition = previousTile.GetComponent<Tile>().endPivot.position;
+
+            // Instantiate a new tile
+            previousTile = GameObject.Instantiate(tile.gameObject, Vector3.zero, tile.transform.rotation);
+
             // Rotate this tile in the scene correctly
-            Quaternion newTileRotation = tile.gameObject.transform.rotation *
+            previousTile.transform.rotation = previousTile.gameObject.transform.rotation *
                                          Quaternion.LookRotation(currentTileDirection, Vector3.up);
 
             // Position this tile in the scene correctly
-            Vector3 pivotPosition = previousTile.GetComponent<Tile>().endPivot.position - tile.startPivot.localPosition + tile.transform.position;
-            Vector3 newTilePosition = Vector3.Scale(pivotPosition, currentTileDirection);
-            
+            previousTile.transform.position = previousEndPivotPosition - (previousTile.GetComponent<Tile>().startPivot.position - previousTile.transform.position);
+            //Vector3 newTilePosition = Vector3.Scale(pivotPosition, currentTileDirection);
+
+            //Debug.Log(previousTile.GetComponent<Tile>().endPivot.position + " - " + (tile.startPivot.position - tile.transform.position) + " + " + tile.transform.position + " = " + pivotPosition);
+
             // Instantiate a new tile
-            previousTile = GameObject.Instantiate(tile.gameObject, newTilePosition, newTileRotation);
+            //previousTile = GameObject.Instantiate(tile.gameObject, pivotPosition, newTileRotation);
             
             // Store this tile as an active tile in the scene
             currentTiles.Add(previousTile);
