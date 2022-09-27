@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_B4544E6F:
-        m_Texture: {fileID: 2800000, guid: 1dbbd14520ebd4da0a90ff9fddbb29de, type: 3}
+        m_Texture: {fileID: 2800000, guid: d32c8fde900c0df4ab6cdcde528920d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_B667F724:
@@ -106,6 +106,7 @@ Material:
     - Vector1_E69985F9: 1
     - Vector1_F4EC345A: 1
     - Vector1_FE978EB1: 0.002
+    - _BendingAmount: 0.0018
     - _Bending_Power: 0.0018
     - _OUTLINE_ON: 0
     - _QueueControl: 0
@@ -120,8 +121,8 @@ Material:
     - Vector2_3845AF61: {r: 10, g: 10, b: 0, a: 0}
     - Vector2_7FBD56D2: {r: 10, g: 10, b: 0, a: 0}
     - Vector2_C8BA1AF9: {r: 0, g: 0, b: 0, a: 0}
-    - _Albedo_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Albedo_Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Albedo_Offset: {r: 0.008, g: 0, b: 0, a: 0}
+    - _Albedo_Tiling: {r: 0.99, g: 1, b: 0, a: 0}
     - _Bending_Direction: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6161619079614764415

@@ -48,11 +48,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_B4544E6F:
-        m_Texture: {fileID: 2800000, guid: f582eab7a758949b497ba923b420c047, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0d6acd0ff846a3140bd8dc4a9548c2e5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_B667F724:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ca33eeb180eeae54aba742c12c4e519a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_DC139D8A:
@@ -95,7 +95,7 @@ Material:
     - Vector1_66153E8A: 1.45
     - Vector1_69E54CD0: 0.5
     - Vector1_6FE66511: 1
-    - Vector1_8B61D42C: 0.005
+    - Vector1_8B61D42C: 0.017
     - Vector1_A939F84B: 0.75
     - Vector1_ABAFE9CD: 0
     - Vector1_B5AE4331: 1.5
@@ -106,6 +106,7 @@ Material:
     - Vector1_E69985F9: 1
     - Vector1_F4EC345A: 1
     - Vector1_FE978EB1: 0.002
+    - _BendingAmount: 0.0018
     - _Bending_Power: 0.0018
     - _OUTLINE_ON: 0
     - _QueueControl: 0

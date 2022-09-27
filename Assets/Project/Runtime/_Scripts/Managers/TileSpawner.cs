@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 using Random = UnityEngine.Random;
 
 
@@ -7,6 +8,8 @@ namespace Project.Runtime._Scripts.Gameplay
 {
     public class TileSpawner : MonoBehaviour
     {
+        private ObjectPool<Tile> _pool;
+
         // Number of straight tiles from the origin tile to give the player leeway
         [SerializeField] private int tileStartCount = 10;
         [SerializeField] private int minStraightTiles = 3;
@@ -26,7 +29,8 @@ namespace Project.Runtime._Scripts.Gameplay
         private List<GameObject> currentObstacles;
 
         private void Start() {
-            // Initialize Lists
+            // Initialize Variables
+            _pool = new ObjectPool<Tile>(() => );
             currentTiles = new List<GameObject>();
             currentObstacles = new List<GameObject>();
             
@@ -48,9 +52,10 @@ namespace Project.Runtime._Scripts.Gameplay
 
         private void SpawnTile(Tile tile, bool spawnObstacle = false) {
 
+            // Store the previous' tiles end postion before it's changed by creating the new tile
             Vector3 previousEndPivotPosition = previousTile.GetComponent<Tile>().endPivot.position;
 
-            // Instantiate a new tile
+            // Instantiate the new tile
             previousTile = GameObject.Instantiate(tile.gameObject, Vector3.zero, tile.transform.rotation);
 
             // Rotate this tile in the scene correctly
@@ -59,13 +64,7 @@ namespace Project.Runtime._Scripts.Gameplay
 
             // Position this tile in the scene correctly
             previousTile.transform.position = previousEndPivotPosition - (previousTile.GetComponent<Tile>().startPivot.position - previousTile.transform.position);
-            //Vector3 newTilePosition = Vector3.Scale(pivotPosition, currentTileDirection);
 
-            //Debug.Log(previousTile.GetComponent<Tile>().endPivot.position + " - " + (tile.startPivot.position - tile.transform.position) + " + " + tile.transform.position + " = " + pivotPosition);
-
-            // Instantiate a new tile
-            //previousTile = GameObject.Instantiate(tile.gameObject, pivotPosition, newTileRotation);
-            
             // Store this tile as an active tile in the scene
             currentTiles.Add(previousTile);
         }
