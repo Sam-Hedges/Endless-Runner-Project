@@ -1,3 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement style="position: absolute; height: 279px; width: 242px; top: 65px; left: 50px;" />
+    <Style src="project://database/Assets/Project/Runtime/MenuUi/Menu1Button.uss?fileID=7433441132597879392&amp;guid=4c7a0bc48cd45cf4cb4115726a630292&amp;type=3#Menu1Button" />
+    <ui:VisualElement style="align-items: center; justify-content: center; height: 591px; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement style="height: 387px; width: 318px; background-color: rgb(255, 0, 0); align-items: center; justify-content: center;">
+            <ui:Button text="Button" display-tooltip-when-elided="true" class="Menu1Button" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" class="Menu1Button" />
+            <ui:Button text="Return to menu" display-tooltip-when-elided="true" name="Return-button" class="Menu1Button" style="position: absolute; top: 330px; left: 96px;" />
+            <ui:Label text="Options" display-tooltip-when-elided="true" style="position: absolute; top: 20px; left: 126px; height: 25px; width: 57px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>
