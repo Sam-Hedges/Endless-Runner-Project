@@ -30,7 +30,7 @@ namespace Project.Runtime._Scripts.Gameplay
 
         private void Start() {
             // Initialize Variables
-            _pool = new ObjectPool<Tile>(() => );
+            //_pool = new ObjectPool<Tile>(() => { });
             currentTiles = new List<GameObject>();
             currentObstacles = new List<GameObject>();
             
