@@ -108,5 +108,10 @@ namespace Project.Runtime._Scripts.Gameplay
 
             return list[Random.Range(0, list.Count)];
         }
+
+        public List<GameObject> GetTiles()
+        {
+            return currentTiles;
+        }
     }
 }

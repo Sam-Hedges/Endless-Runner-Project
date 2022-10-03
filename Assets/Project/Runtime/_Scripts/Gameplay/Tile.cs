@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Cinemachine;
 
 namespace Project.Runtime._Scripts.Gameplay
 {
@@ -19,5 +20,6 @@ namespace Project.Runtime._Scripts.Gameplay
         public Transform startPivot;
         public Transform endPivot;
         public MeshRenderer roadRenderer;
+        public CinemachinePath[] lanes = new CinemachinePath[0];
     }
 }
