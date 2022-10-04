@@ -11,10 +11,14 @@ namespace Project.Runtime._Scripts.MenuScripts
         public Button startButton;
         public Button optionsButton;
         public Button quitGame;
+
+		public GameObject mainMenu;
+		
         
         // Start is called before the first frame update
         void Start()
         {
+
             var root = GetComponent<UIDocument>().rootVisualElement;
 
             startButton = root.Q<Button>("Start-button");
@@ -23,18 +27,13 @@ namespace Project.Runtime._Scripts.MenuScripts
 
             startButton.clicked += StartButtonPressed;
             quitGame.clicked += QuitGameButtonPressed;
-            optionsButton.clicked += OptionsButtonPressed;
+            //optionsButton.clicked += OptionsButtonPressed;
         }
 
         void StartButtonPressed()
         {
-            SceneManager.LoadScene("SampleScene");
-        }
-
-        void OptionsButtonPressed()
-        {
-            SceneManager.LoadScene("Options");
-        }
+			mainMenu.SetActive(false);	
+		}
 
         void QuitGameButtonPressed()
         {

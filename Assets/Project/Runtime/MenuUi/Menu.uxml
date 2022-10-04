@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Project/Runtime/MenuUi/MenuButton.uss?fileID=7433441132597879392&amp;guid=adc995d410578ff458248bf0f4781142&amp;type=3#MenuButton" />
     <ui:VisualElement style="align-items: center; justify-content: center; height: 908px; background-color: rgba(255, 255, 255, 0); width: 592px; max-width: 100%; max-height: 100%;" />
-    <ui:Button text="Play Game" display-tooltip-when-elided="true" name="Start-button" class="ButtonStyle" style="height: 49px; width: 101px; position: absolute; top: 841px; left: 391px;" />
-    <ui:Button text="Options" display-tooltip-when-elided="true" name="Options-button" class="ButtonStyle" style="height: 56px; width: 72px; position: absolute; top: 8px; left: 14px;" />
-    <ui:Button text="Quit" display-tooltip-when-elided="true" name="Quit-button" class="ButtonStyle" style="height: 51px; width: 74px; position: absolute; top: 21px; left: 398px;" />
-    <ui:Label text="Wing It" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; position: absolute; top: 15px; left: 164px; height: 48px; width: 179px; background-color: rgb(255, 255, 255); justify-content: flex-start;" />
+    <ui:Button text="Play Game" display-tooltip-when-elided="true" name="Start-button" class="ButtonStyle" style="height: 49px; width: 101px; position: absolute; top: 520px; left: 209px;" />
+    <ui:Button text="Options" display-tooltip-when-elided="true" name="Options-button" class="ButtonStyle" style="height: 56px; width: 72px; position: absolute; top: 4px; left: 2px;" />
+    <ui:Button text="Quit" display-tooltip-when-elided="true" name="Quit-button" class="ButtonStyle" style="height: 51px; width: 74px; position: absolute; top: 7px; left: 248px;" />
+    <ui:Label text="Wing It" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; position: absolute; top: 6px; left: 86px; height: 48px; width: 149px; background-color: rgb(255, 255, 255); justify-content: flex-start;" />
 </ui:UXML>

@@ -7,9 +7,9 @@ namespace Project.Runtime._Scripts.MenuScripts
     public class UiControllerOptions : MonoBehaviour
     {
         private Button _returnToMenu;
-        
-        // Start is called before the first frame update
-        void Start()
+	
+		// Start is called before the first frame update
+		void Start()
         {
             var root = GetComponent<UIDocument>().rootVisualElement;
             
@@ -21,6 +21,6 @@ namespace Project.Runtime._Scripts.MenuScripts
         void ReturnMenuPressed()
         {
             SceneManager.LoadScene("SampleScene");
-        }
+		}
     }
 }
