@@ -1893,9 +1893,9 @@ MonoBehaviour:
   roadRenderer: {fileID: 5596432044371404344}
   lanes:
   - {fileID: 4327322801769529637}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5905052028711788441}
+  - {fileID: 6232479987251902521}
+  - {fileID: 6340185757539224883}
 --- !u!1 &7586402094712068312
 GameObject:
   m_ObjectHideFlags: 0

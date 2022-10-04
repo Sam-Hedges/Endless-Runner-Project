@@ -9,12 +9,13 @@ public class CartController : MonoBehaviour
 {
     [SerializeField] private TileSpawner tileSpawner;
     [SerializeField][Range(0f, 0.1f)] private float laneRange = 0.1f;
+    [HideInInspector] public Tile currentTile;
     private float speed;
     private Coroutine deleteTile;
-    private CinemachineDollyCart cart;
+    [HideInInspector] public CinemachineDollyCart cart;
     private List<GameObject> tiles;
     private bool isMoving = false;
-    [SerializeField][Range(0, 3)] private int currentLane = 0;
+    [SerializeField][Range(0, 3)] public int currentLane = 0;
     private float tileDistance;
 
 
@@ -24,7 +25,8 @@ public class CartController : MonoBehaviour
         speed = cart.m_Speed;
         tiles = tileSpawner.GetTiles();
         isMoving = true;
-        tileDistance = tiles[0].GetComponent<Tile>().lanes[currentLane].PathLength;
+        currentTile = tiles[0].GetComponent<Tile>();
+        tileDistance = currentTile.lanes[currentLane].PathLength;
     }
 
     private void Update()
@@ -35,14 +37,18 @@ public class CartController : MonoBehaviour
             return;
         }
 
-        Debug.Log(cart.m_Position);
-        Debug.Log(tileDistance);
+        if (cart.m_Path != currentTile.lanes[currentLane])
+        {
+            cart.m_Path = currentTile.lanes[currentLane];
+        }
+        
         if (CheckWithinRange(cart.m_Position, tileDistance, laneRange))
         {
             deleteTile = StartCoroutine(DeleteTile(tiles[0]));
             tiles.RemoveAt(0);
 
-            CinemachinePath newLane = tiles[0].GetComponent<Tile>().lanes[currentLane];
+            currentTile = tiles[0].GetComponent<Tile>();
+            CinemachinePath newLane = currentTile.lanes[currentLane];
 
             cart.m_Path = newLane;
             tileDistance = newLane.PathLength;
