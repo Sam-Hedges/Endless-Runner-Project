@@ -1,11 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Project/Runtime/MenuUi/Menu1Button.uss?fileID=7433441132597879392&amp;guid=4c7a0bc48cd45cf4cb4115726a630292&amp;type=3#Menu1Button" />
-    <ui:VisualElement style="align-items: center; justify-content: center; height: 591px; background-color: rgba(0, 0, 0, 0);">
-        <ui:VisualElement style="height: 387px; width: 318px; background-color: rgb(255, 0, 0); align-items: center; justify-content: center;">
-            <ui:Button text="Button" display-tooltip-when-elided="true" class="Menu1Button" />
-            <ui:Button text="Button" display-tooltip-when-elided="true" class="Menu1Button" />
-            <ui:Button text="Return to menu" display-tooltip-when-elided="true" name="Return-button" class="Menu1Button" style="position: absolute; top: 330px; left: 96px;" />
-            <ui:Label text="Options" display-tooltip-when-elided="true" style="position: absolute; top: 20px; left: 126px; height: 25px; width: 57px;" />
-        </ui:VisualElement>
-    </ui:VisualElement>
+    <ui:VisualElement style="align-items: center; justify-content: center; height: 903px; background-color: rgba(0, 0, 0, 0); flex-direction: column-reverse; width: 507px; -unity-text-outline-color: rgba(255, 0, 0, 255); -unity-text-outline-width: 1px; text-shadow: 20px 20px 0 rgba(0, 0, 0, 255);" />
+    <ui:Button text="Button" display-tooltip-when-elided="true" class="Menu1Button" style="position: absolute; top: 356px; left: 147px; height: 120px; width: 206px;" />
+    <ui:Button text="Return to menu" display-tooltip-when-elided="true" name="Return-button" class="Menu1Button" style="position: absolute; top: 684px; left: 148px; height: 107px; width: 194px;" />
+    <ui:Label text="Options" display-tooltip-when-elided="true" style="position: absolute; top: 41px; left: 151px; height: 63px; width: 166px; align-items: center; justify-content: center; -unity-text-align: middle-center; font-size: 41px; -unity-text-outline-width: 0; -unity-text-outline-color: rgba(255, 255, 255, 255); color: rgba(255, 255, 255, 255); text-shadow: 2px 2px 0 rgba(255, 0, 0, 255); letter-spacing: 6px; word-spacing: 2px; background-color: rgba(0, 0, 0, 255); -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; border-left-color: rgba(197, 126, 229, 255); border-right-color: rgba(197, 126, 229, 255); border-top-color: rgba(197, 126, 229, 255); border-bottom-color: rgba(197, 126, 229, 255); border-left-width: 6px; border-right-width: 6px; border-top-width: 6px; border-bottom-width: 6px; border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px;" />
+    <ui:Button text="Button" display-tooltip-when-elided="true" class="Menu1Button" style="height: 115px; width: 240px; position: absolute; top: 533px; left: 125px; border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; border-left-color: rgba(255, 0, 0, 255); border-right-color: rgba(255, 0, 0, 255); border-top-color: rgba(255, 0, 0, 255); border-bottom-color: rgba(255, 0, 0, 255); border-left-width: 11px; border-right-width: 11px; border-top-width: 11px; border-bottom-width: 11px;" />
 </ui:UXML>

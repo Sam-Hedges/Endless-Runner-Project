@@ -20,7 +20,7 @@ namespace Project.Runtime._Scripts.MenuScripts
 
         void ReturnMenuPressed()
         {
-            SceneManager.LoadScene("MenuTesting");
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

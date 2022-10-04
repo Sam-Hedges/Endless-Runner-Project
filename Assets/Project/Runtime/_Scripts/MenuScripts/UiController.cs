@@ -6,6 +6,8 @@ namespace Project.Runtime._Scripts.MenuScripts
 {
     public class UiController : MonoBehaviour
     {
+        //C67FE5
+
         public Button startButton;
         public Button optionsButton;
         public Button quitGame;
