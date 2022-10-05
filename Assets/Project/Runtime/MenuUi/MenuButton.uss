@@ -1,0 +1,20 @@
+.ButtonStyle {
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.ButtonStyle:hover {
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    background-color: rgba(120, 120, 120, 255);
+}
+
+.ButtonStyle:active {
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    background-color: rgb(48, 48, 48);
+    color: rgba(255, 255, 255, 255);
+}
