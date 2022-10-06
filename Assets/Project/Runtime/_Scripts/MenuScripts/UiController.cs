@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -8,34 +9,27 @@ namespace Project.Runtime._Scripts.MenuScripts
     {
         //C67FE5
 
-        public Button startButton;
-        public Button optionsButton;
-        public Button quitGame;
+        private Button startButton;
+        private Button quitGame;
 
-		public GameObject mainMenu;
-		
-        
-        // Start is called before the first frame update
-        void Start()
+		// Start is called before the first frame update
+		private void Start()
         {
-
-            var root = GetComponent<UIDocument>().rootVisualElement;
+			var root = GetComponent<UIDocument>().rootVisualElement;
 
             startButton = root.Q<Button>("Start-button");
-            optionsButton = root.Q<Button>("Options-button");
             quitGame = root.Q<Button>("Quit-button");
 
             startButton.clicked += StartButtonPressed;
             quitGame.clicked += QuitGameButtonPressed;
-            //optionsButton.clicked += OptionsButtonPressed;
         }
 
-        void StartButtonPressed()
+        private void StartButtonPressed()
         {
-			mainMenu.SetActive(false);	
+			SceneManager.LoadScene("SampleScene");	
 		}
 
-        void QuitGameButtonPressed()
+        private void QuitGameButtonPressed()
         {
             Application.Quit();
             Debug.Log("Game would close");

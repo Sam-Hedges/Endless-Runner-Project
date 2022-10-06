@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/Runtime/MenuUi/StyleSheet/MenuButton.uss?fileID=7433441132597879392&amp;guid=adc995d410578ff458248bf0f4781142&amp;type=3#MenuButton" />
+    <ui:Button text="Play Game" display-tooltip-when-elided="true" name="Start-button" class="ButtonStyle" style="height: 49px; width: 101px; position: absolute; top: 530px; left: 222px;" />
+    <ui:Button text="Quit" display-tooltip-when-elided="true" name="Quit-button" class="ButtonStyle" style="height: 51px; width: 74px; position: absolute; top: 527px; left: 3px;" />
+    <ui:Label text="Wing It" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; position: absolute; top: 6px; left: 86px; height: 48px; width: 149px; background-color: rgb(255, 255, 255); justify-content: flex-start;" />
+</ui:UXML>

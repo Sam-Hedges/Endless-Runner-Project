@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Button text="Pause" display-tooltip-when-elided="true" name="Pause-Button" style="width: 47px; position: absolute; top: 13px; left: 5px;" />
+    <ui:Button text="Options" display-tooltip-when-elided="true" name="Options-Button" style="position: absolute; top: 539px; left: 4px; width: 62px;" />
+    <ui:Button text="Menu" display-tooltip-when-elided="true" name="Menu-Button" style="height: 31px; width: 51px; position: absolute; top: 543px; left: 266px;" />
+</ui:UXML>
