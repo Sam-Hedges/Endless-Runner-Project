@@ -8,7 +8,7 @@ namespace Project.Runtime._Scripts.Gameplay
 {
     public class TileSpawner : MonoBehaviour
     {
-        private ObjectPool<Tile> _pool;
+        public static ObjectPool<Tile> tilePool;
 
         // Number of straight tiles from the origin tile to give the player leeway
         [SerializeField] private int tileStartCount = 10;
