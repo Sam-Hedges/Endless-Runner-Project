@@ -2,13 +2,35 @@
     align-items: center;
     justify-content: center;
     opacity: 1;
+    -unity-text-align: middle-center;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 255);
+    -unity-slice-left: 0;
+    -unity-slice-top: 0;
+    -unity-slice-right: 0;
+    -unity-slice-bottom: 0;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-left-color: rgba(0, 0, 0, 255);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgba(255, 255, 255, 255);
+    border-bottom-color: rgba(255, 255, 255, 255);
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
 }
 
 .ButtonStyle:hover {
     align-items: center;
     justify-content: center;
     opacity: 1;
-    background-color: rgba(120, 120, 120, 255);
+    background-color: rgb(120, 120, 120);
 }
 
 .ButtonStyle:active {
@@ -16,5 +38,5 @@
     justify-content: center;
     opacity: 1;
     background-color: rgb(48, 48, 48);
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
 }

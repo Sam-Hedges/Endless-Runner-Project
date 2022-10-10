@@ -11,6 +11,7 @@ namespace Project.Runtime._Scripts.MenuScripts
 
         private Button startButton;
         private Button quitGame;
+		private Button story;
 
 		// Start is called before the first frame update
 		private void Start()
@@ -19,9 +20,14 @@ namespace Project.Runtime._Scripts.MenuScripts
 
             startButton = root.Q<Button>("Start-button");
             quitGame = root.Q<Button>("Quit-button");
+			story = root.Q<Button>("Story-Button");
 
             startButton.clicked += StartButtonPressed;
             quitGame.clicked += QuitGameButtonPressed;
+			story.clicked += GameStory;
+	
+
+			
         }
 
         private void StartButtonPressed()
@@ -34,5 +40,11 @@ namespace Project.Runtime._Scripts.MenuScripts
             Application.Quit();
             Debug.Log("Game would close");
         }
+
+		private void GameStory()
+		{
+			
+			
+		}
     }
 }
