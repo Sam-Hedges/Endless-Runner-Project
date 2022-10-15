@@ -3,31 +3,4 @@
     <ui:Button text="Play Game" display-tooltip-when-elided="true" name="Start-button" class="ButtonStyle" style="height: 49px; width: 101px; position: absolute; top: 530px; left: 222px;" />
     <ui:Button text="Quit" display-tooltip-when-elided="true" name="Quit-button" class="ButtonStyle" style="height: 51px; width: 74px; position: absolute; top: 527px; left: 3px;" />
     <ui:Label text="Wing It" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; position: absolute; top: 6px; left: 86px; height: 48px; width: 149px; background-color: rgb(255, 255, 255); justify-content: flex-start; border-left-width: 7px; border-right-width: 7px; border-top-width: 7px; border-bottom-width: 7px; border-top-left-radius: 22px; border-bottom-left-radius: 22px; border-top-right-radius: 22px; border-bottom-right-radius: 22px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(255, 129, 226); border-bottom-color: rgb(255, 119, 250);" />
-    <ui:Button display-tooltip-when-elided="true" name="Story-Button" style="position: absolute; width: 335px; left: -5px; height: 594px; top: -5px; background-color: rgba(255, 255, 255, 255); overflow: visible; visibility: visible;">
-        <ui:Button text="Skip" display-tooltip-when-elided="true" name="Skip" style="position: absolute; top: 533px; left: 240px;" />
-        <ui:Label text="Tap to continue" display-tooltip-when-elided="true" style="position: absolute; top: 532px; left: 44px;" />
-        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Project/Runtime/Materials/2560px-Speech_bubble.svg.png?fileID=2800000&amp;guid=21577b13e4f8fb342a7d926bbe366b77&amp;type=3#2560px-Speech_bubble.svg&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); height: 232px; width: 223px; position: absolute; top: 8px; left: 77px;" />
-        <ui:Label display-tooltip-when-elided="true" text="Oh look at my marvelous&#10;tree it is beautiful and &#10;I never want to leave it for &#10;anything " style="height: 77px; width: 177px; position: absolute; top: 70px; left: 105px; -unity-text-align: middle-center;" />
-    </ui:Button>
-    <ui:VisualElement name="Story1-VisualElement" style="height: 590px; background-color: rgb(172, 251, 255); opacity: 1; display: flex; visibility: hidden; position: absolute; width: 331px;">
-        <ui:Button text="Skip" display-tooltip-when-elided="true" name="Skip" style="position: absolute; top: 533px; left: 240px; overflow: hidden;" />
-        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Project/Runtime/Materials/2560px-Speech_bubble.svg.png?fileID=2800000&amp;guid=21577b13e4f8fb342a7d926bbe366b77&amp;type=3#2560px-Speech_bubble.svg&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); height: 232px; width: 223px; position: absolute; top: 66px; left: 97px;">
-            <ui:Label display-tooltip-when-elided="true" text="Oh my. What is that &#10;just there at the bottom &#10;of my tree coudl be &#10;FOOD! I need a closer look" style="height: 77px; width: 177px; position: absolute; top: 49px; left: 28px; -unity-text-align: middle-center;" />
-        </ui:VisualElement>
-    </ui:VisualElement>
-    <ui:VisualElement name="Story2-VisualElement" style="height: 590px; background-color: rgb(172, 251, 255); opacity: 1; display: flex; visibility: hidden; position: absolute; width: 331px;">
-        <ui:Button text="Skip" display-tooltip-when-elided="true" name="Skip" style="position: absolute; top: 533px; left: 240px; overflow: hidden;" />
-        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Project/Runtime/Materials/2560px-Speech_bubble.svg.png?fileID=2800000&amp;guid=21577b13e4f8fb342a7d926bbe366b77&amp;type=3#2560px-Speech_bubble.svg&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); height: 195px; width: 205px; position: absolute; top: 3px; left: 123px;">
-            <ui:Label display-tooltip-when-elided="true" text="Oh no my Foot &#10;ARGHHHHH" style="height: 77px; width: 177px; position: absolute; top: 47px; left: 15px; -unity-text-align: middle-center;" />
-        </ui:VisualElement>
-        <ui:VisualElement style="position: absolute; height: 143px; width: 138px; left: 152px; top: 264px; background-image: url(&apos;project://database/Assets/Project/Runtime/Materials/2560px-Speech_bubble.svg.png?fileID=2800000&amp;guid=21577b13e4f8fb342a7d926bbe366b77&amp;type=3#2560px-Speech_bubble.svg&apos;); flex-direction: row-reverse;">
-            <ui:Label text="CRASH!" display-tooltip-when-elided="true" style="position: absolute; top: 45px; left: 43px;" />
-        </ui:VisualElement>
-    </ui:VisualElement>
-    <ui:VisualElement name="Story3-VisualElement" style="height: 590px; background-color: rgb(172, 251, 255); opacity: 1; display: flex; visibility: hidden; position: absolute; width: 331px;">
-        <ui:Button text="Skip" display-tooltip-when-elided="true" name="Skip" style="position: absolute; top: 532px; left: 246px; overflow: hidden;" />
-        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Project/Runtime/Materials/2560px-Speech_bubble.svg.png?fileID=2800000&amp;guid=21577b13e4f8fb342a7d926bbe366b77&amp;type=3#2560px-Speech_bubble.svg&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); height: 233px; width: 253px; position: absolute; top: 3px; left: 75px;">
-            <ui:Label display-tooltip-when-elided="true" text="That hurt. Wait a second&#10;what is that behind me&#10;It looks like monster food&#10;RUN!" style="height: 77px; width: 177px; position: absolute; top: 62px; left: 48px; -unity-text-align: middle-center;" />
-        </ui:VisualElement>
-    </ui:VisualElement>
 </ui:UXML>
