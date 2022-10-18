@@ -31,16 +31,9 @@ public class CartController : MonoBehaviour
 
     private void Update()
     {
-        if (!isMoving)
-        {
-            cart.m_Speed = 0f;
-            return;
-        }
+        if (IsMoving()) return;
 
-        if (cart.m_Path != currentTile.lanes[currentLane])
-        {
-            cart.m_Path = currentTile.lanes[currentLane];
-        }
+        SetCurrentPath(cart.m_Path, currentTile.lanes[currentLane]);
         
         if (CheckWithinRange(cart.m_Position, tileDistance, laneRange))
         {
@@ -54,6 +47,22 @@ public class CartController : MonoBehaviour
             tileDistance = newLane.PathLength;
             cart.m_Position = 0;
         }
+    }
+
+    private void SetCurrentPath(CinemachinePathBase cartPath, CinemachinePathBase currentLane)
+    {
+        if (cartPath != currentLane) { cart.m_Path = currentLane; }
+        return;
+    }
+
+    private bool IsMoving()
+    {
+        if (!isMoving)
+        {
+            cart.m_Speed = 0f;
+            return true;
+        }
+        return false;
     }
 
     private IEnumerator DeleteTile(GameObject obj)
