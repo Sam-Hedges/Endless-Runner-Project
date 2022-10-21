@@ -6,7 +6,7 @@ using Cinemachine;
 namespace Player
 {
     [RequireComponent(typeof(CharacterController))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerControllerOld : MonoBehaviour
     {
         [SerializeField] private CharacterController CharacterController;
         [SerializeField] private Camera _mainCam;
@@ -48,7 +48,7 @@ namespace Player
         [Header("Audio")]
         public AudioSource audioFootsteps;
 
-        public static PlayerController instance;
+        public static PlayerControllerOld instance;
         
         //Camera Directions
         private Vector3 CameraTransformForward => ScaleCameraTransform(_mainCam.transform.forward);
@@ -79,7 +79,7 @@ namespace Player
         void Awake()
         {
             // Creates the static variable instance to the current player controller so that other scripts within the scene can reference the player easier
-            instance = GetComponent<PlayerController>();
+            instance = GetComponent<PlayerControllerOld>();
             _mainCam = Camera.main; 
             
             _inputAction = new PlayerActions();

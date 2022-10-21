@@ -106,6 +106,7 @@ Material:
     - Vector1_E69985F9: 1
     - Vector1_F4EC345A: 1
     - Vector1_FE978EB1: 0.002
+    - _BendingAmount: 0.0018
     - _Bending_Power: 0.0018
     - _OUTLINE_ON: 0
     - _QueueControl: 0
@@ -121,7 +122,7 @@ Material:
     - Vector2_7FBD56D2: {r: 10, g: 10, b: 0, a: 0}
     - Vector2_C8BA1AF9: {r: 0, g: 0, b: 0, a: 0}
     - _Albedo_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Albedo_Tiling: {r: 10, g: 10, b: 0, a: 0}
+    - _Albedo_Tiling: {r: 5, g: 5, b: 0, a: 0}
     - _Bending_Direction: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6161619079614764415

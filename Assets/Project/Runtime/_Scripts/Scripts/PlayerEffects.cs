@@ -1,5 +1,6 @@
 ﻿using Player;
 using UnityEngine;
+using PlayerController = Project.Runtime._Scripts.Gameplay.Player.PlayerController;
 
 public class PlayerEffects : MonoBehaviour
 {
@@ -16,11 +17,11 @@ public class PlayerEffects : MonoBehaviour
     Vector3 lastEmit;
    
     CharacterController cc;
-    PlayerController pc;
+    PlayerControllerOld pc;
 
     void Start()
     {
-        pc = GetComponent<PlayerController>();
+        pc = GetComponent<PlayerControllerOld>();
         cc = GetComponent<CharacterController>();
         lastEmit = transform.position;
     }

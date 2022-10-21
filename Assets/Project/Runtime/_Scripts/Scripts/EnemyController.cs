@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Player;
 using UnityEngine;
 using UnityEngine.AI;
+using PlayerController = Project.Runtime._Scripts.Gameplay.Player.PlayerController;
 
 public class EnemyController : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class EnemyController : MonoBehaviour
 
     void PlayerCollision()
     {
-        if (PlayerController.instance.dashed)
+        if (PlayerControllerOld.instance.dashed)
         {
             collider.isTrigger = true;
         }
@@ -69,12 +70,12 @@ public class EnemyController : MonoBehaviour
 
     void FindClosestTarget()
     {
-        float playerDistance = Vector3.Distance(PlayerController.instance.transform.position, transform.position);
+        float playerDistance = Vector3.Distance(PlayerControllerOld.instance.transform.position, transform.position);
         float baseDistance = Vector3.Distance(BaseManager.instance.transform.position, transform.position);
 
         if (playerDistance < baseDistance)
         {
-            target = PlayerController.instance.gameObject;
+            target = PlayerControllerOld.instance.gameObject;
         }
         else
         {
@@ -152,7 +153,7 @@ public class EnemyController : MonoBehaviour
                 }
                 else if (target.GetComponent<PlayerController>())
                 {
-                    PlayerController.instance.Damaged(damage);
+                    PlayerControllerOld.instance.Damaged(damage);
                 }
 
                 canAttack = false;
