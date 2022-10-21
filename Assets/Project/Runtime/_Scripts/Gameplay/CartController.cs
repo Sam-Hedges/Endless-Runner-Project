@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Project.Runtime._Scripts.Managers;
 
 [RequireComponent(typeof(CinemachineDollyCart))]
 public class CartController : MonoBehaviour
 {
+    [SerializeField] private InputManager input;
     [SerializeField] private TileSpawner tileSpawner;
     [SerializeField][Range(0f, 0.1f)] private float laneRange = 0.1f;
     [HideInInspector] public Tile currentTile;

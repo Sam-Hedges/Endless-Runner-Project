@@ -16,9 +16,8 @@ namespace Project.Runtime._Scripts.Gameplay.Player
         }
 
         // Update is called once per frame
-        void Update()
-        {
-        
+        void Update() {
+            transform.position = dollyCart.position;
         }
     }
 }

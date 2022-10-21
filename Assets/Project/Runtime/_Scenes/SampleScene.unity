@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: input
       value: 
       objectReference: {fileID: 1859378394}
+    - target: {fileID: 5564666947764279422, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
+      propertyPath: dollyCart
+      value: 
+      objectReference: {fileID: 1500037476}
     - target: {fileID: 0}
       propertyPath: _mainCam
       value: 
@@ -683,7 +687,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329346353}
-  m_LocalRotation: {x: 0.3953786, y: -0.0000000147299035, z: 0.0000000063405254, w: 0.91851825}
+  m_LocalRotation: {x: 0.3953786, y: -0.000000011697782, z: 0.0000000050353415, w: 0.91851825}
   m_LocalPosition: {x: -4.5, y: 3.58, z: -13.940001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -866,6 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318889d43e06ab24b893e4e1ef553c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 1859378394}
   tileSpawner: {fileID: 638351911}
   laneRange: 0.0642
   currentTile: {fileID: 0}
@@ -950,7 +955,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.3953786, y: -0.0000000147299035, z: 0.0000000063405254, w: 0.91851825}
+  m_LocalRotation: {x: 0.3953786, y: -0.000000011697782, z: 0.0000000050353415, w: 0.91851825}
   m_LocalPosition: {x: -4.5, y: 3.58, z: -13.940001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
