@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using Project.Runtime._Scripts.Managers;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CinemachineDollyCart))]
 public class CartController : MonoBehaviour
 {
-    [SerializeField] private InputManager input;
     [SerializeField] private TileSpawner tileSpawner;
     [SerializeField][Range(0f, 0.1f)] private float laneRange = 0.1f;
     [HideInInspector] public Tile currentTile;
@@ -20,6 +19,8 @@ public class CartController : MonoBehaviour
     [SerializeField][Range(0, 3)] public int currentLane = 0;
     private float tileDistance;
 
+    private Vector2 movementInputVector;
+    private bool isMovementPressed;
 
     private void Start()
     {
@@ -50,7 +51,39 @@ public class CartController : MonoBehaviour
             cart.m_Position = 0;
         }
     }
+    
+    public void OnMovementInput(InputAction.CallbackContext context)
+    {
+        movementInputVector = context.ReadValue<Vector2>();
+        isMovementPressed = movementInputVector != Vector2.zero;
 
+        if (isMovementPressed) {
+
+            if (movementInputVector.x < 0f) {
+                currentLane = IncrementCurrentLane(-1);
+            }
+            else if (movementInputVector.x > 0f) {
+                currentLane = IncrementCurrentLane(1);
+            }
+            
+        }
+    }
+
+    private int IncrementCurrentLane(int value) {
+
+        int updatedLane = currentLane + value;
+
+        if (updatedLane < 0) {
+            updatedLane = 0;
+        }
+        else if (updatedLane > 3) {
+            updatedLane = 3;
+        }
+
+        return updatedLane;
+
+    }
+    
     private void SetCurrentPath(CinemachinePathBase cartPath, CinemachinePathBase currentLane)
     {
         if (cartPath != currentLane) { cart.m_Path = currentLane; }

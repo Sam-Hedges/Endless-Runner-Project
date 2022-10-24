@@ -163,7 +163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2996855032187271429, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2996855032187271430, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
       propertyPath: m_RootOrder
@@ -233,18 +233,10 @@ PrefabInstance:
       propertyPath: dollyCart
       value: 
       objectReference: {fileID: 1500037476}
-    - target: {fileID: 0}
-      propertyPath: _mainCam
-      value: 
-      objectReference: {fileID: 1687258584}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 5564666947764279422, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
+      propertyPath: lerpSpeed
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: CharacterController
-      value: 
-      objectReference: {fileID: 1428156420}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
 --- !u!1 &169176551
@@ -687,8 +679,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329346353}
-  m_LocalRotation: {x: 0.3953786, y: -0.000000011697782, z: 0.0000000050353415, w: 0.91851825}
-  m_LocalPosition: {x: -4.5, y: 3.58, z: -13.940001}
+  m_LocalRotation: {x: 0.39537862, y: -0.000000027373979, z: 0.000000011783202, w: 0.91851825}
+  m_LocalPosition: {x: -4.5, y: 4.057, z: -13.940001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -714,8 +706,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1500037476}
-  m_Follow: {fileID: 1500037476}
+  m_LookAt: {fileID: 1428156422}
+  m_Follow: {fileID: 1428156422}
   m_Lens:
     FieldOfView: 76.42642
     OrthographicSize: 10
@@ -798,11 +790,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &1428156420 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 2996855032187271434, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
-  m_PrefabInstance: {fileID: 164460925}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1428156422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2996855032187271430, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
@@ -870,7 +857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318889d43e06ab24b893e4e1ef553c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 1859378394}
   tileSpawner: {fileID: 638351911}
   laneRange: 0.0642
   currentTile: {fileID: 0}
@@ -955,8 +941,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.3953786, y: -0.000000011697782, z: 0.0000000050353415, w: 0.91851825}
-  m_LocalPosition: {x: -4.5, y: 3.58, z: -13.940001}
+  m_LocalRotation: {x: 0.39537862, y: -0.000000027373979, z: 0.000000011783202, w: 0.91851825}
+  m_LocalPosition: {x: -4.5, y: 4.057, z: -13.940001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1091,6 +1077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7c4b90f96abb84689cd23500ab2137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cart: {fileID: 1500037478}
 --- !u!1 &2138677391
 GameObject:
   m_ObjectHideFlags: 0

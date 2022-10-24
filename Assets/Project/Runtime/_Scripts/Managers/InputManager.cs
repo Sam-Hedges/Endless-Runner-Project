@@ -14,8 +14,7 @@ namespace Project.Runtime._Scripts.Managers
 
     public class InputManager : MonoBehaviour
     {
-        public static event Action<InputAction.CallbackContext> OnMovementInput;
-    
+
         public InputType InputType
         {
             get { return _inputType; }
@@ -28,7 +27,9 @@ namespace Project.Runtime._Scripts.Managers
         private InputType _inputType;
 
         private UserActions inputActions;
-    
+        [SerializeField] private CartController cart;
+        
+        
         private void Awake() {
             InitializeInputActions();
         }
@@ -84,15 +85,13 @@ namespace Project.Runtime._Scripts.Managers
         #region PlayerActionStates
 
         private void EnableMovementInput() {
-            inputActions.Player.Movement.started += OnMovementInput;
-            inputActions.Player.Movement.canceled += OnMovementInput;
-            inputActions.Player.Movement.performed += OnMovementInput;
+            //inputActions.Player.Movement.started += cart.OnMovementInput;
+            inputActions.Player.Movement.performed += cart.OnMovementInput;
         }
     
         private void DisableMovementInput() {
-            inputActions.Player.Movement.started -= OnMovementInput;
-            inputActions.Player.Movement.canceled -= OnMovementInput;
-            inputActions.Player.Movement.performed -= OnMovementInput;
+            //inputActions.Player.Movement.started -= cart.OnMovementInput;
+            inputActions.Player.Movement.performed -= cart.OnMovementInput;
         }
         
         #endregion

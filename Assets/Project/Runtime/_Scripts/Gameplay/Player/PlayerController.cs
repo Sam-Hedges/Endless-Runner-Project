@@ -1,13 +1,12 @@
-using Project.Runtime._Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Runtime._Scripts.Gameplay.Player
 {
     public class PlayerController : MonoBehaviour
     {
-
-        [SerializeField] private InputManager input;
+        
         [SerializeField] private Transform dollyCart;
+        [SerializeField] private float lerpSpeed = 20f;
         
         // Start is called before the first frame update
         void Start()
@@ -17,7 +16,9 @@ namespace Project.Runtime._Scripts.Gameplay.Player
 
         // Update is called once per frame
         void Update() {
-            transform.position = dollyCart.position;
+            Transform t = transform;
+            t.position = Vector3.Lerp(t.position, dollyCart.position, Time.deltaTime * lerpSpeed);
+            t.rotation = Quaternion.Lerp(t.rotation, dollyCart.rotation, Time.deltaTime * lerpSpeed);
         }
     }
 }
