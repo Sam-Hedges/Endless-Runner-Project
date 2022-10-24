@@ -1,5 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Label text="Pause Menu" display-tooltip-when-elided="true" style="position: absolute; top: 21px; left: 101px; height: 56px; width: 131px; -unity-text-align: middle-center; font-size: 22px;" />
-    <ui:Button text="Return to menu" display-tooltip-when-elided="true" style="height: 115px; width: 146px; position: absolute; top: 441px; left: 96px;" />
-    <ui:Button text="Return to game" display-tooltip-when-elided="true" style="position: absolute; height: 125px; width: 141px; top: 276px; left: 98px;" />
-</ui:UXML>

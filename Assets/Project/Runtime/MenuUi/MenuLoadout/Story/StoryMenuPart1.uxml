@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Main-VisualElement1" style="height: 588px; background-color: rgb(153, 248, 255); border-left-width: 18px; border-right-width: 18px; border-top-width: 18px; border-bottom-width: 18px; border-top-left-radius: 11px; border-bottom-left-radius: 11px; border-top-right-radius: 11px; border-bottom-right-radius: 11px; border-left-color: rgb(255, 0, 0); border-right-color: rgb(255, 255, 255); border-top-color: rgb(194, 0, 255); border-bottom-color: rgb(37, 255, 77);">
+        <ui:Button text="Skip" display-tooltip-when-elided="true" name="Skip-Button" style="position: absolute; top: 517px; left: 238px;" />
+        <ui:Button text="Next" display-tooltip-when-elided="true" name="Next-Button1" style="position: absolute; top: 518px; left: 28px;" />
+        <ui:VisualElement style="position: absolute; height: 189px; width: 188px; left: 124px; top: 39px; background-image: url(&apos;project://database/Assets/Project/Runtime/Materials/2560px-Speech_bubble.svg.png?fileID=2800000&amp;guid=21577b13e4f8fb342a7d926bbe366b77&amp;type=3#2560px-Speech_bubble.svg&apos;);" />
+        <ui:Label text="Whats that down&#10;there. It looks&#10;Scrumptious." display-tooltip-when-elided="true" style="position: absolute; top: 88px; left: 174px; height: 65px; width: 93px;" />
+    </ui:VisualElement>
+</ui:UXML>
