@@ -28,11 +28,11 @@ public class PlayerEffects : MonoBehaviour
     public void Update()
     {
         // If distance between last position and current position is bigger than footstep distance
-        if ((Vector3.Distance(lastEmit, transform.position) > delta) && cc.isGrounded == true)
+        if (Vector3.Distance(lastEmit, transform.position) > delta)
         {
             // Calulates a new particle position ()
-            var pos = transform.position + (transform.right * gap * dir);
-            pos.y = 0.01f;
+            Vector3 pos = transform.position + (transform.right * gap * dir);
+            pos.y = 0.10f;
 
             // Flips the footstep each time
             dir *= -1;
@@ -49,7 +49,7 @@ public class PlayerEffects : MonoBehaviour
             lastEmit = transform.position;
         }
 
-        if (cartController.IsMoving())
+        if (!cartController.IsMoving())
         {
             footstepDust.enableEmission = true;
         }
