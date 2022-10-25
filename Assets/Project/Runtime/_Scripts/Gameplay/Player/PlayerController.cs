@@ -10,6 +10,7 @@ namespace Project.Runtime._Scripts.Gameplay.Player
         [SerializeField] private TileSpawner tileSpawner;
         [SerializeField] private InputManager inputManager;
         [SerializeField] private Transform dollyCart;
+        [SerializeField] private Animator animator;
         [SerializeField] private float lerpSpeed = 20f;
         private CharacterController characterController;
         
@@ -19,9 +20,20 @@ namespace Project.Runtime._Scripts.Gameplay.Player
         private Vector3 velocity;
         private bool IsGrounded => characterController.isGrounded;
         
+        //Cached Animation Property Indexes
+        private static readonly int a_Jumped = Animator.StringToHash("jumped");
+        private static readonly int a_MoveSpeed = Animator.StringToHash("moveSpeed");
+        private static readonly int a_IsGrounded = Animator.StringToHash("isGrounded");
+        private static readonly int a_Moving = Animator.StringToHash("moving");
+        private static readonly int a_IdleAction = Animator.StringToHash("idleAction");
+        private static readonly int a_Attack1 = Animator.StringToHash("attack");
+        private static readonly int a_Dash1 = Animator.StringToHash("dash");
+        
         // Start is called before the first frame update
         private void Awake() {
             characterController = GetComponent<CharacterController>();
+            animator.SetBool(a_Moving, true);
+            animator.SetFloat(a_MoveSpeed, 0);
         }
 
         // Update is called once per frame

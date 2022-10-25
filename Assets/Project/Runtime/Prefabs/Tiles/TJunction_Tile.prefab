@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 96930165367ed0045bbc025aeac9a248, type: 2}
+  - {fileID: 2100000, guid: 8731597f542786e41862cfe55e552fa8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -226,7 +226,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 96930165367ed0045bbc025aeac9a248, type: 2}
+  - {fileID: 2100000, guid: 8731597f542786e41862cfe55e552fa8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -318,6 +318,7 @@ MonoBehaviour:
   startPivot: {fileID: 4978710145982461813}
   endPivot: {fileID: 3331928335958536761}
   roadRenderer: {fileID: 2563049256144284115}
+  direction: {x: 0, y: 0, z: 0}
   lanes: []
   leftLanes:
   - {fileID: 2942597556554099808}
@@ -377,7 +378,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6, z: 12}
+  m_Size: {x: 6, y: 6, z: 20}
   m_Center: {x: -3, y: 2, z: -6}
 --- !u!1 &1494525321838620123
 GameObject:
@@ -503,7 +504,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4a10eec7163432843b71ad09999575c7, type: 2}
+  - {fileID: 2100000, guid: 08de27340a14f56459012107ea286af0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -602,7 +603,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 96930165367ed0045bbc025aeac9a248, type: 2}
-  - {fileID: 2100000, guid: 96930165367ed0045bbc025aeac9a248, type: 2}
+  - {fileID: 2100000, guid: 8731597f542786e41862cfe55e552fa8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1158,7 +1159,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6, z: 12}
+  m_Size: {x: 6, y: 6, z: 20}
   m_Center: {x: 3, y: 2, z: -6}
 --- !u!1 &7694695544696232202
 GameObject:

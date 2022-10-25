@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CinemachineDollyCart))]
 public class CartController : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private TileSpawner tileSpawner;
     [SerializeField][Range(0f, 0.1f)] private float laneRange = 0.1f;
     [HideInInspector] public Tile currentTile;
@@ -15,7 +16,7 @@ public class CartController : MonoBehaviour
     private Coroutine deleteTile;
     [HideInInspector] public CinemachineDollyCart cart;
     private List<GameObject> tiles;
-    private bool isMoving = false;
+    private bool isMoving => gameManager.isGameActive;
     [SerializeField][Range(0, 3)] public int currentLane = 0;
     private float tileDistance;
 
@@ -27,7 +28,6 @@ public class CartController : MonoBehaviour
         cart = GetComponent<CinemachineDollyCart>();
         speed = cart.m_Speed;
         tiles = tileSpawner.GetTiles();
-        isMoving = true;
         currentTile = tiles[0].GetComponent<Tile>();
         tileDistance = currentTile.lanes[currentLane].PathLength;
     }

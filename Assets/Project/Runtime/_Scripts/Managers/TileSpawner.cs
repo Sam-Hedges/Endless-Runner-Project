@@ -116,12 +116,17 @@ namespace Project.Runtime._Scripts.Gameplay
 
                 previousTurnTile = previousTile;
 
-                currentTileDirection = previousTurnTile.GetComponent<Tile>().direction;
+                currentTileDirection = transform.TransformDirection(previousTurnTile.GetComponent<Tile>().direction);
 
                 Vector3 tilePlacementScale = Vector3.zero;
                 switch (previousTile.GetComponent<Tile>().type) {
                     case TileType.LEFT:
+                        currentTileDirection = previousTurnTile.GetComponent<Tile>().transform.forward;
+                        tilePlacementScale = Vector3.Scale((previousTile.GetComponent<Tile>().roadRenderer.bounds.size - (Vector3.one * 2)) + 
+                                                           (Vector3.one * straightTile.GetComponentInChildren<BoxCollider>().size.z / 2), currentTileDirection);
+                        break;
                     case TileType.RIGHT:
+                        currentTileDirection = previousTurnTile.GetComponent<Tile>().transform.forward;
                         tilePlacementScale = Vector3.Scale((previousTile.GetComponent<Tile>().roadRenderer.bounds.size - (Vector3.one * 2)) + 
                                                            (Vector3.one * straightTile.GetComponentInChildren<BoxCollider>().size.z / 2), currentTileDirection);
                         break;
