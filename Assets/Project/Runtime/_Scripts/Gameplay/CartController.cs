@@ -38,10 +38,11 @@ public class CartController : MonoBehaviour
 
         SetCurrentPath(cart.m_Path, currentTile.lanes[currentLane]);
         
-        if (CheckWithinRange(cart.m_Position, tileDistance, laneRange))
-        {
-            deleteTile = StartCoroutine(DeleteTile(tiles[0]));
-            tiles.RemoveAt(0);
+        if (CheckWithinRange(cart.m_Position, tileDistance, laneRange)) {
+            
+            GameObject tile = tileSpawner.currentTiles[0];
+            tileSpawner.currentTiles.RemoveAt(0);
+            deleteTile = StartCoroutine(DeleteTile(tile));
 
             currentTile = tiles[0].GetComponent<Tile>();
             CinemachinePath newLane = currentTile.lanes[currentLane];

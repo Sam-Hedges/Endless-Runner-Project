@@ -293,6 +293,14 @@ PrefabInstance:
       propertyPath: lerpSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5564666947764279422, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
+      propertyPath: tileSpawner
+      value: 
+      objectReference: {fileID: 638351911}
+    - target: {fileID: 5564666947764279422, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1859378394}
     - target: {fileID: 5882928509606144309, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
       propertyPath: m_Weight
       value: 0.6
@@ -547,8 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914304c243b78b648a52355c65e77717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileStartCount: 10
-  minStraightTiles: 3
+  gameManager: {fileID: 1365654926}
+  tileStartCount: 3
+  minStraightTiles: 6
   maxStraightTiles: 15
   startTile: {fileID: 4231079400464323047}
   straightTile: {fileID: 1402201318869382686, guid: fb73d3afe2603844fba1bb11a023c512, type: 3}
@@ -557,6 +566,7 @@ MonoBehaviour:
   - {fileID: 921803303271294197, guid: 0e708a5e7426b5945b39cd292eb014f6, type: 3}
   - {fileID: 6988651494835820888, guid: 76c35be3d794eb44386336b97c27af13, type: 3}
   obstacles: []
+  currentTiles: []
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +826,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329346353}
-  m_LocalRotation: {x: 0.3953786, y: -0.000000015532365, z: 0.000000006685947, w: 0.91851825}
+  m_LocalRotation: {x: 0.39537856, y: 0.000000026180027, z: -0.00000001126926, w: 0.91851825}
   m_LocalPosition: {x: -4.5, y: 4.173, z: -13.940001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -940,7 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb51b41617bf88a4fb19385016a500b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsGameActive: 1
+  isGameActive: 1
 --- !u!4 &1428156422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2996855032187271430, guid: f6db62417cb68234897c4c5c583caeb2, type: 3}
@@ -1092,7 +1102,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.3953786, y: -0.000000015532365, z: 0.000000006685947, w: 0.91851825}
+  m_LocalRotation: {x: 0.39537856, y: 0.000000026180027, z: -0.00000001126926, w: 0.91851825}
   m_LocalPosition: {x: -4.5, y: 4.173, z: -13.940001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
