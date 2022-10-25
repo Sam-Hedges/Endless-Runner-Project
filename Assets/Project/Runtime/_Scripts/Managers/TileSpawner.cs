@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -10,6 +11,8 @@ namespace Project.Runtime._Scripts.Gameplay
     {
         public static ObjectPool<Tile> tilePool;
 
+        [SerializeField] private GameManager gameManager;
+        
         // Number of straight tiles from the origin tile to give the player leeway
         [SerializeField] private int tileStartCount = 10;
         [SerializeField] private int minStraightTiles = 3;
@@ -40,16 +43,16 @@ namespace Project.Runtime._Scripts.Gameplay
             previousTile = startTile;
             currentTiles.Add(previousTile);
             
+            
             // Spawn in the starting tiles
             for (int i = 0; i < tileStartCount; i++) {
                 SpawnTile(straightTile.GetComponent<Tile>());
             }
             
-            //SpawnTile(ReturnRandGameObjectFromList(turnTiles).GetComponent<Tile>());
-            SpawnTile(turnTiles[0].GetComponent<Tile>());
-            AddNewDirection(Vector3.left);
+            StartCoroutine(GenerateGameTiles());
+            
         }
-
+        
         private void SpawnTile(Tile tile, bool spawnObstacle = false) {
 
             // Store the previous' tiles end postion before it's changed by creating the new tile
@@ -69,8 +72,8 @@ namespace Project.Runtime._Scripts.Gameplay
             currentTiles.Add(previousTile);
         }
 
-        public void AddNewDirection(Vector3 direction) {
-            currentTileDirection = direction;
+        public void AddNewDirection(GameObject previousTurnTile) {
+            currentTileDirection = previousTurnTile.GetComponent<Tile>().direction;
 
             Vector3 tilePlacementScale = Vector3.zero;
             switch (previousTile.GetComponent<Tile>().type) {
@@ -82,6 +85,7 @@ namespace Project.Runtime._Scripts.Gameplay
                 case TileType.QUAD:
                     break;
                 case TileType.BI:
+                    while (previousTurnTile.GetComponent<Tile>().direction == Vector3.zero)
                     tilePlacementScale = Vector3.Scale(previousTile.GetComponent<Tile>().roadRenderer.bounds.size / 2 +
                                                        (Vector3.one * straightTile.GetComponentInChildren<BoxCollider>()
                                                            .size.z / 2), currentTileDirection);
@@ -95,14 +99,27 @@ namespace Project.Runtime._Scripts.Gameplay
                         
                 SpawnTile(straightTile.GetComponent<Tile>(), (i != 0));
             }
+            
+        }
+
+        private IEnumerator GenerateGameTiles() {
+
+            while (gameManager.isGameActive) {
+                
+                SpawnTile(ReturnRandGameObjectFromList(turnTiles).GetComponent<Tile>());
+
+                GameObject previousTurnTile = previousTile;
                     
-            SpawnTile(ReturnRandGameObjectFromList(turnTiles).GetComponent<Tile>());
+                AddNewDirection(previousTurnTile);
+
+                while (previousTurnTile.scene.IsValid()) {
+                    
+                }
+            }
+
+            yield return null;
         }
-        
-        private Vector3 RotatePointAroundPivot(Vector3 childPosition, Vector3 parentPosition, Vector3 rotation) {
-            return Quaternion.Euler(rotation) * (childPosition - parentPosition) + parentPosition;
-        }
-        
+
         private GameObject ReturnRandGameObjectFromList(List<GameObject> list) {
             if (list.Count <= 0) return null;
 

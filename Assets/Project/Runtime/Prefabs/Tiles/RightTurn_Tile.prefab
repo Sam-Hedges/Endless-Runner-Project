@@ -1891,6 +1891,7 @@ MonoBehaviour:
   startPivot: {fileID: 3335828119768918551}
   endPivot: {fileID: 5407817106853838649}
   roadRenderer: {fileID: 5596432044371404344}
+  direction: {x: 1, y: 0, z: 0}
   lanes:
   - {fileID: 4327322801769529637}
   - {fileID: 5905052028711788441}

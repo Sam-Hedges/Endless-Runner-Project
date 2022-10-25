@@ -84,12 +84,12 @@ namespace Project.Runtime._Scripts.Managers
     
         #region PlayerActionStates
 
-        private void EnableMovementInput() {
+        public void EnableMovementInput() {
             //inputActions.Player.Movement.started += cart.OnMovementInput;
             inputActions.Player.Movement.performed += cart.OnMovementInput;
         }
     
-        private void DisableMovementInput() {
+        public void DisableMovementInput() {
             //inputActions.Player.Movement.started -= cart.OnMovementInput;
             inputActions.Player.Movement.performed -= cart.OnMovementInput;
         }

@@ -1,3 +1,5 @@
+using System;
+using Project.Runtime._Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Runtime._Scripts.Gameplay.Player
@@ -5,7 +7,8 @@ namespace Project.Runtime._Scripts.Gameplay.Player
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
-        
+        [SerializeField] private TileSpawner tileSpawner;
+        [SerializeField] private InputManager inputManager;
         [SerializeField] private Transform dollyCart;
         [SerializeField] private float lerpSpeed = 20f;
         private CharacterController characterController;
@@ -66,6 +69,26 @@ namespace Project.Runtime._Scripts.Gameplay.Player
 
             // applies the new velocity vector to the character controller
             characterController.Move(velocity * Time.deltaTime);
+        }
+
+        private void OnTriggerEnter(Collider collider) {
+            switch (collider.name) {
+                case "Right Turn":
+                    collider.gameObject.GetComponent<Tile>().direction = Vector3.right;
+                    break;
+                case "Left Turn":
+                    collider.gameObject.GetComponent<Tile>().direction = Vector3.left;
+                    break;
+                case "Stop Lanes":
+                    inputManager.DisableMovementInput();
+                    break;
+            }
+        }
+
+        private void OnTriggerExit(Collider collider) {
+            if (collider.name == "Stop Lanes") {
+                inputManager.EnableMovementInput();
+            }
         }
     }
 }

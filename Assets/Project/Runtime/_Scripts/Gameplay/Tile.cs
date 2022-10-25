@@ -20,6 +20,7 @@ namespace Project.Runtime._Scripts.Gameplay
         public Transform startPivot;
         public Transform endPivot;
         public MeshRenderer roadRenderer;
+        public Vector3 direction;
 
 
         [HideInInspector][SerializeField] public CinemachinePath[] lanes = new CinemachinePath[3];
