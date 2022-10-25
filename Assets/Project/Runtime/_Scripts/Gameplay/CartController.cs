@@ -90,7 +90,7 @@ public class CartController : MonoBehaviour
         return;
     }
 
-    private bool IsMoving()
+    public bool IsMoving()
     {
         if (!isMoving)
         {

@@ -31,7 +31,7 @@ namespace Project.Runtime._Scripts.Gameplay
 
 
         // Custom Editor to make tile component only reveal the relevant
-        // Arrays for the CinemachinePath lanes
+        // Arrays / variables for the CinemachinePath lanes
         [CustomEditor(typeof(Tile))]
         public class TileScriptEditor : Editor
         {

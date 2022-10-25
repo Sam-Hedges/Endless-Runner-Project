@@ -17,11 +17,10 @@ public class PlayerEffects : MonoBehaviour
     Vector3 lastEmit;
    
     CharacterController cc;
-    PlayerControllerOld pc;
+    [SerializeField] private CartController cartController;
 
     void Start()
     {
-        pc = GetComponent<PlayerControllerOld>();
         cc = GetComponent<CharacterController>();
         lastEmit = transform.position;
     }
@@ -50,7 +49,7 @@ public class PlayerEffects : MonoBehaviour
             lastEmit = transform.position;
         }
 
-        if (pc.isMoving == true && cc.isGrounded == true)
+        if (cartController.IsMoving())
         {
             footstepDust.enableEmission = true;
         }
@@ -58,7 +57,8 @@ public class PlayerEffects : MonoBehaviour
         {
             footstepDust.enableEmission = false;
         }
-
+        
+        /*
         if (cc.isGrounded && pc.jumped)
         {
             pc.jumped = false;
@@ -74,5 +74,6 @@ public class PlayerEffects : MonoBehaviour
         {
             dash.enableEmission = false;
         }
+        */
     }
 }
