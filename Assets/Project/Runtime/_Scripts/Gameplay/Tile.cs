@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Cinemachine;
+using Random = UnityEngine.Random;
 
 namespace Project.Runtime._Scripts.Gameplay
 {
@@ -21,8 +23,9 @@ namespace Project.Runtime._Scripts.Gameplay
         public Transform endPivot;
         public MeshRenderer roadRenderer;
         public Vector3 direction;
+        [HideInInspector] public bool spawnObstacle = false;
 
-
+        [HideInInspector][SerializeField] public GameObject[] obstacles = new GameObject[1];
         [HideInInspector][SerializeField] public CinemachinePath[] lanes = new CinemachinePath[3];
         [HideInInspector][SerializeField] public CinemachinePath[] leftLanes = new CinemachinePath[3];
         [HideInInspector][SerializeField] public CinemachinePath[] rightLanes = new CinemachinePath[3];
@@ -30,12 +33,24 @@ namespace Project.Runtime._Scripts.Gameplay
         [HideInInspector][SerializeField] public BoxCollider[] turnTriggers = new BoxCollider[2];
         [HideInInspector][SerializeField] public BoxCollider[] disableInputTrigger;
 
+        private void Start() {
+            if (type == TileType.STRAIGHT && spawnObstacle) {
+                GameObject obstacle = obstacles[Random.Range(0, obstacles.Length)];
+                Transform lane = lanes[Random.Range(1, 2)].transform;
+                
+                obstacle = Instantiate(obstacle, lane.position, transform.rotation);
+                
+                obstacle.transform.SetParent(transform.parent);
+            }
+        }
 
         // Custom Editor to make tile component only reveal the relevant
         // Arrays / variables for the CinemachinePath lanes
+        
         [CustomEditor(typeof(Tile))]
         public class TileScriptEditor : Editor
         {
+            private SerializedProperty s_Obstacles;
             private SerializedProperty s_Lanes;
             private SerializedProperty s_LeftLanes;
             private SerializedProperty s_RightLanes;
@@ -44,6 +59,7 @@ namespace Project.Runtime._Scripts.Gameplay
 
             private void OnEnable()
             {
+                s_Obstacles = serializedObject.FindProperty("obstacles");
                 s_Lanes = serializedObject.FindProperty("lanes");
                 s_LeftLanes = serializedObject.FindProperty("leftLanes");
                 s_RightLanes = serializedObject.FindProperty("rightLanes");
@@ -63,9 +79,14 @@ namespace Project.Runtime._Scripts.Gameplay
 
                 switch (tile.type)
                 {
+                    case TileType.STRAIGHT:
+                        Debug.Log("Actives");
+                        EditorGUILayout.PropertyField(s_Obstacles, new GUIContent("Obstacles"));
+                        EditorGUILayout.PropertyField(s_Lanes, new GUIContent("Lanes"));
+                        serializedObject.ApplyModifiedProperties();
+                        break;
                     case TileType.LEFT:
                     case TileType.RIGHT:
-                    case TileType.STRAIGHT:
                         EditorGUILayout.PropertyField(s_Lanes, new GUIContent("Lanes"));
                         serializedObject.ApplyModifiedProperties();
                         break;
@@ -87,5 +108,6 @@ namespace Project.Runtime._Scripts.Gameplay
                 }
             }
         }
+        
     }
 }

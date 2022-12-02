@@ -7,6 +7,7 @@ namespace Project.Runtime._Scripts.Gameplay.Player
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private GameManager gameManager;
         [SerializeField] private TileSpawner tileSpawner;
         [SerializeField] private InputManager inputManager;
         [SerializeField] private Transform dollyCart;
@@ -44,6 +45,9 @@ namespace Project.Runtime._Scripts.Gameplay.Player
         }
 
         private void HandleMovement() {
+
+            if (!gameManager.isGameActive) return;
+            
             Transform t = transform;
 
             Vector3 newMoveVector = Vector3.Lerp(t.position, dollyCart.position, slide) - t.position;

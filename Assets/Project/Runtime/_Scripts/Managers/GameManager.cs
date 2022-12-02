@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public  bool isGameActive = true;
+    public  bool isGameActive = false;
+
+    public void StartGame() {
+        isGameActive = true;
+    }
 }

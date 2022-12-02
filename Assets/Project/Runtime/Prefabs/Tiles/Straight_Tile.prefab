@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4128437738199283191
 Transform:
   m_ObjectHideFlags: 0
@@ -150,6 +150,9 @@ MonoBehaviour:
   endPivot: {fileID: 1306634933169006363}
   roadRenderer: {fileID: 8008601529226303816}
   direction: {x: 0, y: 0, z: 0}
+  spawnObstacle: 0
+  obstacles:
+  - {fileID: 211035019510020781, guid: 4b8d2b6c953b1f84d8512e59600e8dfc, type: 3}
   lanes:
   - {fileID: 1227670397902759528}
   - {fileID: 4236482392543841899}

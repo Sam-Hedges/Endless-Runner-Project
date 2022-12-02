@@ -34,7 +34,7 @@ public class CartController : MonoBehaviour
 
     private void Update()
     {
-        if (IsMoving()) return;
+        if (!gameManager.isGameActive) return;
 
         SetCurrentPath(cart.m_Path, currentTile.lanes[currentLane]);
         
@@ -95,7 +95,6 @@ public class CartController : MonoBehaviour
     {
         if (!isMoving)
         {
-            cart.m_Speed = 0f;
             return true;
         }
         return false;
